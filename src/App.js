@@ -7,10 +7,10 @@ import ReactDOM from "react-dom/client"
 
 function App() {
 
-  let choleryk = 0;
-  let sangwinik = 0;
-  let melancholik = 0;
-  let flegmatyk = 0
+  let choleric = 0;
+  let sanguine = 0;
+  let phlegmatic = 0
+  let melancholic = 0;
   let i = 0;
 
   const questions = data.map(e => {
@@ -28,7 +28,7 @@ function App() {
 
       <Head />
       {questions}
-      
+
     </div>
   );
 }

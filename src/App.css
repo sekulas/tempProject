@@ -28,7 +28,6 @@ body {
 .content {
   background-color: violet;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 3px;
@@ -37,4 +36,6 @@ body {
 
 form {
   display: flex;
+  flex-direction: column;
+  background-color: #3C1642;
 }

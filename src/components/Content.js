@@ -3,12 +3,16 @@ import React from "react"
 const Content = props => (
 
     <div className="content">
-        <p>{props.question}</p>
+        <h1>{props.question}</h1>
         <form>
-            <input type="radio"/>
-            <label>Tak</label>
-            <input type="radio"/>
-            <label>Nie</label>
+            <section>
+                <input type="radio" name="answer"/>
+                <label>Tak</label>
+            </section>
+            <section>
+                <input type="radio" name="answer"/>
+                <label>Nie</label>
+            </section>
         </form>
     </div>
 
