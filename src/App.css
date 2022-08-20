@@ -13,16 +13,24 @@
 body {
   display: flex;;
   flex-direction: column;
-  background-color: var(--mint);
+  background-color: white;
+  color: white;
 }
 
 #head {
-  margin: 3px;
+  display: flex;
   background-color: var(--green);
-  color: white;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 3px;
 }
 
 #content {
-  background-color: white;
+  background-color: violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 3px;
 }
