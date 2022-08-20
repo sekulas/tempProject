@@ -1,9 +1,17 @@
 import React from "react"
 
-export default function Content() {
-    return (
-        <div id="content">
-            <h1>siema</h1>
-        </div>
-    )
-}
+const Content = props => (
+
+    <div className="content">
+        <p>{props.question}</p>
+        <form>
+            <input type="radio"/>
+            <label>Tak</label>
+            <input type="radio"/>
+            <label>Nie</label>
+        </form>
+    </div>
+
+)
+
+export default Content

@@ -22,15 +22,19 @@ body {
   background-color: var(--green);
   justify-content: center;
   align-items: center;
-  height: 10vh;
   margin: 3px;
 }
 
-#content {
+.content {
   background-color: violet;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
   margin: 3px;
+  padding: 3px;
+}
+
+form {
+  display: flex;
 }
