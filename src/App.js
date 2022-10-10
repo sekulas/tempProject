@@ -12,17 +12,45 @@ function App() {
   let phlegmatic = 0
   let melancholic = 0;
 
-  const questions = data.map(e => {
+  let isTheQuestionChecked = Array(2).fill(false);
+
+  const questions = data.map((e, index) => {
     return (
       <Content 
-        key={e.question} 
+        key={e.question}
         question={e.question} 
+        onChange={(index) => {
+          console.log("change")
+          isTheQuestionChecked[index] = !isTheQuestionChecked[index];
+        }}
       />
     )
   })
+  
+  const sumUp = () => {
 
-  const whenSubitted = () => {
-    
+    console.log("start")
+
+    questions.forEach((_e, index) => {
+      if(isTheQuestionChecked[index] === true) {
+        choleric += Number(data[index].points[0]);
+        sanguine += Number(data[index].points[1]);
+        phlegmatic += Number(data[index].points[2]);
+        melancholic += Number(data[index].points[3]);
+      }
+    })
+
+    console.log({phlegmatic});
+
+    return (
+      <ul>
+        <ol>choleric: {choleric}</ol>
+        <ol>sanguine: {sanguine}</ol>
+        <ol>phlegmatic: {phlegmatic}</ol>
+        <ol>melancholic: {melancholic}</ol>
+      </ul>
+    )
+
   }
 
   return (
@@ -30,7 +58,7 @@ function App() {
 
       <Head />
       {questions}
-      <SubmitButton />
+      <SubmitButton onClick={sumUp()}/>
 
     </div>
   );
