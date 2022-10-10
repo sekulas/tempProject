@@ -3,9 +3,12 @@ import Head from './components/Head'
 import Content from './components/Content'
 import {data} from "./temperamentData"
 import SubmitButton from './components/SubmitButton';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [resultsShouldBeShown, showResults] = useState(false);
 
   let choleric = 0;
   let sanguine = 0;
@@ -42,14 +45,7 @@ function App() {
 
     console.log({phlegmatic});
 
-    return (
-      <ul>
-        <ol>choleric: {choleric}</ol>
-        <ol>sanguine: {sanguine}</ol>
-        <ol>phlegmatic: {phlegmatic}</ol>
-        <ol>melancholic: {melancholic}</ol>
-      </ul>
-    )
+    showResults(resultsShouldBeShown => !resultsShouldBeShown);
 
   }
 
@@ -58,8 +54,17 @@ function App() {
 
       <Head />
       {questions}
-      <SubmitButton onClick={sumUp()}/>
-
+      <SubmitButton onClick={sumUp}/>
+      {resultsShouldBeShown
+        &&
+        <ul>
+          <ol>choleric: {choleric}</ol>
+          <ol>sanguine: {sanguine}</ol>
+          <ol>phlegmatic: {phlegmatic}</ol>
+          <ol>melancholic: {melancholic}</ol>
+        </ul>
+      }
+      
     </div>
   );
 }
