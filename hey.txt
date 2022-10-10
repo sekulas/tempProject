@@ -461,4 +461,4 @@ export const data = [
     points:"0100",},
     {question: "232 Domatorka",
     points:"0001",}
-    ]
+]

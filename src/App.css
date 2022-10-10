@@ -39,3 +39,8 @@ form {
   flex-direction: column;
   background-color: #3C1642;
 }
+
+#submit-button {
+  display: flex;
+  justify-content: center;
+}

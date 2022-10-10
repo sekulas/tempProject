@@ -2,7 +2,7 @@ import './App.css';
 import Head from './components/Head'
 import Content from './components/Content'
 import {data} from "./temperamentData"
-import ReactDOM from "react-dom/client"
+import SubmitButton from './components/SubmitButton';
 
 
 function App() {
@@ -11,23 +11,26 @@ function App() {
   let sanguine = 0;
   let phlegmatic = 0
   let melancholic = 0;
-  let i = 0;
 
   const questions = data.map(e => {
-    i++
     return (
       <Content 
-        key={i} 
+        key={e.question} 
         question={e.question} 
       />
     )
   })
+
+  const whenSubitted = () => {
+    
+  }
 
   return (
     <div className="App">
 
       <Head />
       {questions}
+      <SubmitButton />
 
     </div>
   );
