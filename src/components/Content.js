@@ -6,11 +6,11 @@ class Content extends React.Component {
         super(props);
         this.state = {
             value: "no",
-            question: props.question
+            question: props.question,
         };
     }
 
-    onChange = e => {
+    onChange = (e) => {
         this.setState({value: e.target.value})
     }
 

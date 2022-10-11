@@ -17,20 +17,24 @@ function App() {
 
   let isTheQuestionChecked = Array(2).fill(false);
 
+  const handleChange = (index) => {
+    isTheQuestionChecked[index] = !isTheQuestionChecked[index];
+  }
+
   const questions = data.map((e, index) => {
+
+    console.log(index);
+    
     return (
       <Content 
         key={e.question}
         question={e.question} 
-        onChange={(index) => {
-          console.log("change")
-          isTheQuestionChecked[index] = !isTheQuestionChecked[index];
-        }}
+        onChange={() => handleChange(index)}
       />
     )
   })
   
-  const sumUp = () => {
+  const handleSubmit = () => {
 
     console.log("start")
 
@@ -54,7 +58,7 @@ function App() {
 
       <Head />
       {questions}
-      <SubmitButton onClick={sumUp}/>
+      <SubmitButton onClick={handleSubmit}/>
       {resultsShouldBeShown
         &&
         <ul>
