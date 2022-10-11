@@ -18,12 +18,13 @@ function App() {
   let isTheQuestionChecked = Array(2).fill(false);
 
   const handleChange = (index) => {
+    console.log("handlingChange");
     isTheQuestionChecked[index] = !isTheQuestionChecked[index];
   }
 
   const questions = data.map((e, index) => {
 
-    console.log(index);
+    console.log("generatin questions", index);
     
     return (
       <Content 
@@ -36,9 +37,10 @@ function App() {
   
   const handleSubmit = () => {
 
-    console.log("start")
+    console.log("submitting");
 
     questions.forEach((_e, index) => {
+
       if(isTheQuestionChecked[index] === true) {
         choleric += Number(data[index].points[0]);
         sanguine += Number(data[index].points[1]);
@@ -47,7 +49,7 @@ function App() {
       }
     })
 
-    console.log({phlegmatic});
+    console.log({choleric});
 
     showResults(resultsShouldBeShown => !resultsShouldBeShown);
 

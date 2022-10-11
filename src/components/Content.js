@@ -18,7 +18,7 @@ class Content extends React.Component {
         return(
             <div className="content">
                 <h1>{this.state.question}</h1>
-                <form>
+                <form onChange={this.props.onChange}>
                     <label>
                         Tak
                         <input type="radio" 
