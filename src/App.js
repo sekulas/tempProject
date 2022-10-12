@@ -9,11 +9,10 @@ import { useState } from 'react';
 function App() {
 
   const [resultsShouldBeShown, showResults] = useState(false);
-
-  let choleric = 0;
-  let sanguine = 0;
-  let phlegmatic = 0
-  let melancholic = 0;
+  const [choleric, setCholeric] = useState(0);
+  const [sanguine, setSanguine] = useState(0);
+  const [phlegmatic, setPhlegmatic] = useState(0);
+  const [melancholic, setMelancholic] = useState(0);
 
   let isTheQuestionChecked = Array(2).fill(false);
 
@@ -42,10 +41,10 @@ function App() {
     questions.forEach((_e, index) => {
 
       if(isTheQuestionChecked[index] === true) {
-        choleric += Number(data[index].points[0]);
-        sanguine += Number(data[index].points[1]);
-        phlegmatic += Number(data[index].points[2]);
-        melancholic += Number(data[index].points[3]);
+        setCholeric(choleric => choleric + Number(data[index].points[0]));
+        setSanguine(sanguine => sanguine + Number(data[index].points[1]));
+        setPhlegmatic(phlegmatic => phlegmatic + Number(data[index].points[2]));
+        setMelancholic(melancholic => melancholic + Number(data[index].points[3]));
       }
     })
 
