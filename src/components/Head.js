@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function Head() {
+function Head() {
 
     return (
         <div id="head">
@@ -10,3 +10,5 @@ export default function Head() {
     )
 
 }
+
+export default Head;

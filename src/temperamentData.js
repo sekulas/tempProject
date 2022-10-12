@@ -1,5 +1,5 @@
 export const data = [
-{question: "piwo",
+{question: "piwoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 points:"1100",},
 {question: "to",
 points:"0011",},

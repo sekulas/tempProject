@@ -54,24 +54,25 @@ function App() {
 
   }
 
-  return (
-    <div className="App">
-
-      <Head />
-      {questions}
-      <SubmitButton onClick={handleSubmit}/>
-      {resultsShouldBeShown
-        &&
-        <ul>
-          <ol>choleric: {choleric}</ol>
-          <ol>sanguine: {sanguine}</ol>
-          <ol>phlegmatic: {phlegmatic}</ol>
-          <ol>melancholic: {melancholic}</ol>
-        </ul>
-      }
-      
-    </div>
-  );
+  if(resultsShouldBeShown) {
+    return (
+      <ul className="results">
+        <ol>choleric: {choleric}</ol>
+        <ol>sanguine: {sanguine}</ol>
+        <ol>phlegmatic: {phlegmatic}</ol>
+        <ol>melancholic: {melancholic}</ol>
+      </ul>
+    )
+  }
+  else {
+    return (
+      <div className="App">
+        <Head />
+        {questions}
+        <SubmitButton onClick={handleSubmit}/>
+      </div>
+    );
+  }
 }
 
 export default App;

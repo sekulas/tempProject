@@ -28,7 +28,7 @@ body {
 .content {
   background-color: violet;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 3px;
   padding: 3px;
@@ -43,4 +43,9 @@ form {
 #submit-button {
   display: flex;
   justify-content: center;
+}
+
+
+.results {
+  background-color: #3C1642;
 }

@@ -1,7 +1,6 @@
 import React from "react"
 
-
-export default function SubmitButton(props) {
+function SubmitButton(props) {
 
     //ciekawa sprawa - bez thego onClick={props.onClick} nie dzialalo
     return (
@@ -11,3 +10,5 @@ export default function SubmitButton(props) {
     )
 
 }
+
+export default SubmitButton;
