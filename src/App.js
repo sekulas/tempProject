@@ -9,11 +9,15 @@ import { useState } from 'react';
 function App() {
 
   const [resultsShouldBeShown, showResults] = useState(false);
-  const [choleric, setCholeric] = useState(0);
-  const [sanguine, setSanguine] = useState(0);
-  const [phlegmatic, setPhlegmatic] = useState(0);
-  const [melancholic, setMelancholic] = useState(0);
-
+  const [temperaments, updateTemperaments] = useState(
+    {
+      choleric: 0,
+      sanguine: 0,
+      flegmatic: 0,
+      melancholic: 0
+    }
+  );
+  
   let isTheQuestionChecked = Array(2).fill(false);
 
   const handleChange = (index) => {
@@ -41,14 +45,12 @@ function App() {
     questions.forEach((_e, index) => {
 
       if(isTheQuestionChecked[index] === true) {
-        setCholeric(choleric => choleric + Number(data[index].points[0]));
-        setSanguine(sanguine => sanguine + Number(data[index].points[1]));
-        setPhlegmatic(phlegmatic => phlegmatic + Number(data[index].points[2]));
-        setMelancholic(melancholic => melancholic + Number(data[index].points[3]));
+        updateTemperaments(temperaments => {return {...temperaments, choleric: temperaments.choleric + Number(data[index].points[0])}});
+        updateTemperaments(temperaments => {return {...temperaments, choleric: temperaments.sanguine + Number(data[index].points[1])}});
+        updateTemperaments(temperaments => {return {...temperaments, choleric: temperaments.flegmatic + Number(data[index].points[2])}});
+        updateTemperaments(temperaments => {return {...temperaments, choleric: temperaments.melancholic + Number(data[index].points[3])}});
       }
     })
-
-    console.log({choleric});
 
     showResults(resultsShouldBeShown => !resultsShouldBeShown);
 
@@ -56,11 +58,11 @@ function App() {
 
   if(resultsShouldBeShown) {
     return (
-      <ul className="results">
-        <ol>choleric: {choleric}</ol>
-        <ol>sanguine: {sanguine}</ol>
-        <ol>phlegmatic: {phlegmatic}</ol>
-        <ol>melancholic: {melancholic}</ol>
+      <ul id="results">
+        <ol>choleric: {temperaments.choleric}</ol>
+        <ol>sanguine: {temperaments.sanguine}</ol>
+        <ol>flegmatic: {temperaments.flegmatic}</ol>
+        <ol>melancholic: {temperaments.melancholic}</ol>
       </ul>
     )
   }

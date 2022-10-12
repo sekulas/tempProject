@@ -28,7 +28,7 @@ body {
 .content {
   background-color: violet;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 3px;
   padding: 3px;
@@ -46,6 +46,6 @@ form {
 }
 
 
-.results {
+#results {
   background-color: #3C1642;
 }
